@@ -1,8 +1,10 @@
 import React from 'react';
 import './Spinner.scss';
 
-export const Spinner = () => {
+const Spinner = () => {
     return(
         <div className="loader"/>
     )
 };
+
+export default Spinner;

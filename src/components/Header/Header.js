@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../../store/auth/actions";
+import actionsLogin from "../../store/auth/actions";
 import MainConstants from "../../constants/mainConstants";
 import './Header.scss'
 
 const Header = props => {
     const handleOut = () => {
-        signOut();
+        actionsLogin.signOut();
     };
 
     const headerLinks = () => {

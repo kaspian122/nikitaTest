@@ -7,10 +7,10 @@ export const SIGN_OUT = 'SIGN_OUT';
 
 const url = 'http://localhost:8000/users/';
 
-export const signIn = (username, history) => {
-    return async () => {
-        await axios.get(url + `${username.login}`)
+const signIn = (username) => {
+    axios.get(url + `${username.login}`)
             .then(response => {
+                console.log(response)
                 dispatch({
                     type: LOGIN,
                     payload: username.login
@@ -23,10 +23,16 @@ export const signIn = (username, history) => {
                     payload: 'Invalid username'
                 })
             })
-    }
 };
 
-export const signOut = () => {
+const signOut = () => {
     localStorage.clear();
     dispatch({ type: SIGN_OUT })
 };
+
+const actionsLogin = {
+    signIn,
+    signOut,
+};
+
+export default actionsLogin;

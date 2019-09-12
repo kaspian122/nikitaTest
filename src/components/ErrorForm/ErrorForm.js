@@ -1,7 +1,7 @@
 import React from 'react';
 import './ErrorForm.scss';
 
-const renderField = (props) => {
+const renderField = props => {
     const { input, label, type, meta: { touched, error } } = props;
     return (
         <div>

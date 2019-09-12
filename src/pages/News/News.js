@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
-import { Post } from '../../components/Post/Post';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import Post from '../../components/Post/Post';
+import axios from 'axios';
 import './News.scss';
 
-class News extends Component{
-    state = {
-        posts: []
+const News = () => {
+    const [posts, postsSet] = useState([]);
+
+    const getPosts = () => {
+        axios.get('https://jsonplaceholder.typicode.com/photos?_limit=5')
+            .then(response => postsSet(response.data))
     };
 
-    componentDidMount(){
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=5')
-            .then(response => response.json())
-            .then(posts => this.setState({posts}))
-    };
-    render() {
-        const { posts } = this.state;
-        return(
-            <div className="posts">
-                {posts.map(post => (
-                    <div className="to-request" key={post.id}>
-                        <Post post={post}/>
-                    </div>
-                ))}
-            </div>
-        )
-    }
+    useEffect(() => {
+        getPosts();
+    },[]);
+
+    return(
+        <div className="posts">
+            {posts.map(post => (
+                <div className="to-request" key={post.id}>
+                    <Post post={post}/>
+                </div>
+            ))}
+        </div>
+    )
 }
 
 export default News

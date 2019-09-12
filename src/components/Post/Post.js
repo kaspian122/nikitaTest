@@ -1,7 +1,7 @@
 import React from 'react';
 import './Post.scss';
 
-export const Post = props => {
+const Post = props => {
     const { post } = props;
     return(
         <div className="postCard">
@@ -12,3 +12,5 @@ export const Post = props => {
         </div>
     )
 };
+
+export default Post;

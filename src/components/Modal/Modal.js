@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.scss';
 
-export const Modal = props => {
+const Modal = props => {
     return ReactDOM.createPortal(
         <div className="modal">
             <button className="modal__close-button" onClick={props.onClose}>Закрыть</button>
@@ -18,3 +18,5 @@ export const Modal = props => {
         document.getElementById('portal')
     );
 };
+
+export default Modal;

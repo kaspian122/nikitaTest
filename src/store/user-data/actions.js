@@ -13,13 +13,13 @@ const config = {
     }
 };
 
-export const setData = (data, username) => {
+const setData = (data, username) => {
     const payload = {
         ...data,
         username: username
     };
-    return async () => {
-        await axios.post(url, qs.stringify(payload), config)
+    console.log("+");
+    axios.post(url, qs.stringify(payload), config)
             .then(response => {
                 dispatch({
                     type: ADD_DATA,
@@ -30,12 +30,10 @@ export const setData = (data, username) => {
             .catch(error => {
 
             })
-    }
 };
 
-export const getData = username => {
-    return async () => {
-        await Api.getDataUser(username)
+const getData = username => {
+    Api.getDataUser(username)
             .then(response => {
                 dispatch({
                     type: ADD_DATA,
@@ -46,5 +44,11 @@ export const getData = username => {
             .catch(error => {
 
             })
-    }
 };
+
+const actionsData = {
+    getData,
+    setData
+};
+
+export default actionsData

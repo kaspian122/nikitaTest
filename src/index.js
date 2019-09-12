@@ -2,11 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import {applyMiddleware, createStore} from "redux";
+import reduxThunk from 'redux-thunk';
+import session from './store/index';
+import { LOGIN } from "./store/auth/actions";
+import {ADD_DATA} from "./store/user-data/actions";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const user = localStorage.getItem('user');
+const data = localStorage.getItem('data');
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+const store = createStoreWithMiddleware(session,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+if(user) {
+    store.dispatch({ type: LOGIN })
+}
+
+if(data) {
+    store.dispatch({ type: ADD_DATA })
+}
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root'));
+

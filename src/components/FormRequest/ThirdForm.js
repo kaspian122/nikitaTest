@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import renderField from "../ErrorForm/ErrorForm";
 import validate from "../../validate/validate";
-import { compose } from "redux";
-import {addData} from '../../store/user-data/actions'
+import {setData} from '../../store/user-data/actions'
 import {connect} from "react-redux";
 
-export default class ThirdForm extends Component {
+class ThirdForm extends Component {
     state = {
         animationClass: '',
     };
@@ -18,12 +17,11 @@ export default class ThirdForm extends Component {
     }
 
     submit = values => {
-        this.props.addData(values, this.props.history);
+        this.props.setData(values, this.props.username);
     };
 
     render() {
         const { handleSubmit, prevPage, submitting, pristine } = this.props;
-        console.log(this.props.data);
         return (
             <div className={`formRequest__container ${this.state.animationClass}`}>
                 <form className="formRequest" onSubmit={handleSubmit(this.submit)}>
@@ -48,16 +46,15 @@ export default class ThirdForm extends Component {
 const mapStateToProps = (state) => {
     return {
         data: state.data,
-        user: localStorage.getItem('user')
+        username: state.user.login
     }
 };
 
-ThirdForm = compose(
-    connect(mapStateToProps, {addData}),
-    reduxForm({
+const form = reduxForm({
         form: 'request',
         destroyOnUnmount: false,
         forceUnregisterOnUnmount: true,
         validate,
-    })
-)(ThirdForm);
+    })(ThirdForm);
+
+export default connect(mapStateToProps, { setData })(form)

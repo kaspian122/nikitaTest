@@ -1,8 +1,11 @@
 import axios from 'axios';
+import qs from 'qs';
+import Api from '../../utils/api';
+import dispatch from "../../index";
 
 export const ADD_DATA = 'ADD_DATA';
 
-const url = 'http://localhost:8000/data';
+const url = 'http://localhost:8000/data/';
 
 const config = {
     headers: {
@@ -10,22 +13,38 @@ const config = {
     }
 };
 
-export const addData = (data, history) => {
-    console.log('action',data);
-    return async (dispatch) => {
-        await axios.post(url, data, config)
+export const setData = (data, username) => {
+    const payload = {
+        ...data,
+        username: username
+    };
+    return async () => {
+        await axios.post(url, qs.stringify(payload), config)
             .then(response => {
-                console.log(response)
+                dispatch({
+                    type: ADD_DATA,
+                    payload: response.data
+                });
+                localStorage.setItem('data', JSON.stringify(response.data))
             })
             .catch(error => {
 
             })
     }
-    // return (dispatch) => {
-    //     localStorage.setItem('data', JSON.stringify(data));
-    //     dispatch({
-    //         type: ADD_DATA,
-    //         payload: data,
-    //     })
-    // }
+};
+
+export const getData = username => {
+    return async () => {
+        await Api.getDataUser(username)
+            .then(response => {
+                dispatch({
+                    type: ADD_DATA,
+                    payload: response.data,
+                });
+                localStorage.setItem('data', JSON.stringify(response.data))
+            })
+            .catch(error => {
+
+            })
+    }
 };

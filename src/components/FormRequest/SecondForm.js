@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import renderField from "../ErrorForm/ErrorForm";
 import validate from "../../validate/validate";
-import { compose } from "redux";
 import { connect } from "react-redux";
-import { addData } from '../../store/user-data/actions';
+import { setData } from '../../store/user-data/actions';
 
-export default class SecondForm extends Component{
+class SecondForm extends Component{
     state = {
         animationClass: '',
     };
@@ -51,12 +50,11 @@ const mapStateToProps = state => {
     return state.data
 };
 
-SecondForm = compose(
-    connect(mapStateToProps, {addData}),
-    reduxForm({
-        form: 'request',
-        destroyOnUnmount: false,
-        forceUnregisterOnUnmount: true,
-        validate
-    })
-)(SecondForm);
+const form = reduxForm({
+    form: 'request',
+    destroyOnUnmount: false,
+    forceUnregisterOnUnmount: true,
+    validate,
+})(SecondForm);
+
+export default connect(mapStateToProps, { setData })(form)

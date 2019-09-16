@@ -17,10 +17,7 @@ const Header = props => {
         if(props.authenticate) {
             return [
                 <li className="auth">
-                    <span>{username}</span>
-                </li>,
-                <li className="auth">
-                    <Link to="/profile">Профиль</Link>
+                    <Link to="/profile">Профиль {username}</Link>
                 </li>,
                 <li className="auth">
                     <Link to="/" onClick={handleOut}>Выйти</Link>

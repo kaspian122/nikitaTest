@@ -8,10 +8,13 @@ const Modal = props => {
             <button className="modal__close-button" onClick={props.onClose}>Закрыть</button>
             <div className="modal__window">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>Представте</li>
+                    <li>Что</li>
+                    <li>Тут</li>
+                    <li>Подсказки</li>
+                    <li>Для</li>
+                    <li>Новых</li>
+                    <li>Пользователей</li>
                 </ul>
             </div>
         </div>,

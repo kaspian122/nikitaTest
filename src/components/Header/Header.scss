@@ -8,6 +8,12 @@ ul {
 
 li {
   float: left;
+
+  span {
+    text-align: center;
+    color: white;
+    line-height: 45px;
+  }
 }
 
 li a {

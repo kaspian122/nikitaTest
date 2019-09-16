@@ -15,8 +15,6 @@ const Request = props => {
         pageSet(page - 1);
     };
 
-    console.log(page)
-
     return(
         <div>
             {page === 1 && <FirstForm onSubmit={nextPage}/>}

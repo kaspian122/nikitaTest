@@ -2,7 +2,7 @@ import { http} from "./apiConfig";
 
 const urlData = '/data';
 
-const getDataUser = username => http.get(`${urlData}/${username}`);
+const getDataUser = () => http.get(`${urlData}`);
 const setDataUser = (data, username) => http.post(`${urlData}`);
 
 const Api = {

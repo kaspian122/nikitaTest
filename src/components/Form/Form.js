@@ -11,10 +11,10 @@ const Form = props => {
     const { handleSubmit, login } = props;
 
     const errorMessage = () => {
-        if(errorMessage) {
+        if(props.errorMessage) {
             return(
-                <div>
-                    {errorMessage}
+                <div className="error">
+                    {props.errorMessage}
                 </div>
             )
         }
@@ -27,6 +27,8 @@ const Form = props => {
     const toggleModal = () => {
         isOpenSet(!isOpen);
     };
+
+    console.log(props.errorMessage);
 
     return (
         <div className="formPanel">

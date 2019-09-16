@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Request from "../../components/Request/Request";
+import { connect } from "react-redux";
 import './Profile.scss';
 
 const Profile = props => {
-    const [username] = useState(localStorage.getItem('user'));
+    const {login} = props;
 
     return(
         <div>
-            <h1 className="hello-user">
-                Добро пожаловать
-                {' '}
-                <span className="hello-user__username">{username}</span>
-            </h1>
-            <div className="user-data">
-                <div className="user-data__form">
-                    <h3 className="user-data__form__title">Заполните форму первичных данных</h3>
-                    <Request/>
+            <div className="profile__title">
+                <h1 className="hello-user">
+                    Добро пожаловать
+                    {' '}
+                    <span className="hello-user__username">{login}</span>
+                </h1>
+                <div className="user-data">
+                    <div className="user-data__form">
+                        <h3 className="user-data__form__title">Заполните форму первичных данных</h3>
+                    </div>
                 </div>
             </div>
+            <Request/>
         </div>
     )
 };
 
-export default Profile;
+const mapStateToProps = state => {
+    return {
+        login: state.user.login,
+    }
+};
+
+export default connect(mapStateToProps)(Profile);

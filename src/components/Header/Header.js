@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import actionsLogin from "../../store/auth/actions";
 import MainConstants from "../../constants/mainConstants";
+import MainUtils from "../../utils/mainUtils";
 import './Header.scss'
 
 const Header = props => {
+    const {username} = props;
+
     const handleOut = () => {
         actionsLogin.signOut();
     };
@@ -13,6 +16,9 @@ const Header = props => {
     const headerLinks = () => {
         if(props.authenticate) {
             return [
+                <li className="auth">
+                    <span>{username}</span>
+                </li>,
                 <li className="auth">
                     <Link to="/profile">Профиль</Link>
                 </li>,
@@ -33,8 +39,8 @@ const Header = props => {
                 <div>
                     <nav>
                         <ul>
-                            {MainConstants.menu.map((item, key) =>
-                                <li key={key}>
+                            {MainConstants.menu.map((item, index) =>
+                                <li key={MainUtils.generateKey(`header_item_${index}`)}>
                                     <Link to={item.link}>{MainConstants.titles[item.id]}</Link>
                                 </li>
                             )}
@@ -48,7 +54,8 @@ const Header = props => {
 
 const mapStateToProps = state => {
     return {
-        authenticate: state.user.authenticate
+        authenticate: state.user.authenticate,
+        username: state.user.login,
     }
 };
 

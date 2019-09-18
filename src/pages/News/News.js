@@ -16,9 +16,13 @@ const News = () => {
             })
     };
 
+
+
     useEffect(() => {
         getPosts();
     },[]);
+
+    console.log(posts.map(item => item.id))
 
     return(
         <>
@@ -26,9 +30,11 @@ const News = () => {
             :(
                 <div className="posts">
                     {posts.map(post => (
-                        <div className="to-request" key={post.id}>
-                            <Post post={post}/>
-                        </div>
+                        <>
+                            <div className="to-request" key={post.id}>
+                                <Post post={post}/>
+                            </div>
+                        </>
                     ))}
                 </div>
                 )

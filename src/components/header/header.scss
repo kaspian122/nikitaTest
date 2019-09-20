@@ -1,0 +1,83 @@
+@import "../../constants/color";
+
+.header {
+    padding: 45px 60px;
+    background: #FFF;
+    transition: .3s ease-in-out;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 90;
+    position: relative;
+
+    &__logo {
+        font-size: 85px;
+        font-weight: 700;
+        color: $black;
+        animation: blur .75s ease-out infinite;
+        text-shadow: 0 0 5px $black, 0 0 0 7px $black;
+        transform: scale(0.7);
+    }
+
+    &__link {
+        font-weight: 600;
+        font-size: 28px;
+        color: $dark-blue;
+        transition: .3s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            color: $white-gray;
+            transition: .3s ease-in-out;
+        }
+    }
+
+    &__list:last-child {
+        margin-top: 20px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+
+        &__item {
+            margin-right: 50px;
+        }
+
+        &__item:last-child {
+            margin-right: 0;
+        }
+
+        &__item-list {
+            list-style: none;
+            margin: 0;
+        }
+
+
+    }
+}
+
+@keyframes blur {
+    0% {
+        transform: scale(0.7);
+    }
+    16% {
+        transform: scale(0.8);
+    }
+    32% {
+        transform: scale(0.9);
+    }
+    48% {
+        transform: scale(1);
+    }
+    64% {
+        transform: scale(0.9);
+    }
+    80% {
+        transform: scale(0.8);
+    }
+    96% {
+        transform: scale(0.7);
+    }
+
+}

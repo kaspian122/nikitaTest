@@ -1,0 +1,10 @@
+.profile {
+
+    &__title {
+        text-align: center;
+
+        &__username {
+            text-transform: uppercase;
+        }
+    }
+}

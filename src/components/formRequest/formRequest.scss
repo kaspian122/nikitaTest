@@ -1,0 +1,93 @@
+@import "../../constants/color";
+
+.form-request{
+    padding: 0 60px;
+    margin: 0 auto;
+
+    &__label {
+        display: inline-block;
+        position: absolute;
+        top: -7px;
+        left: 10px;
+        padding: 0 3px;
+        color: $dark-purple;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 1;
+        background-color: #FFF;
+
+        &--center {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+        border: 1px solid $gray;
+        outline: none;
+        color: $dark-purple;
+        width: 100%;
+        padding: 13px 13px;
+        height: 120px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    &__button {
+        width: 230px;
+        height: 60px;
+        border: 1px solid $black;
+        background-color: $black;
+        color: #FFF;
+        outline: none;
+        box-shadow: none;
+        transition: all .3s ease;
+        cursor: pointer;
+        font-size: inherit;
+
+        &:hover {
+            background-color: #FFF;
+            color: $black;
+        }
+
+        &--margin-right{
+            margin-right: 20px;
+        }
+    }
+
+    &__group-button {
+        margin-top: 30px;
+    }
+
+    &__gender {
+        background-color: #FFF;
+        display: block;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    &__form {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 23px;
+        position: relative;
+        width: 48%;
+        display: inline-block;
+    }
+
+    &__request {
+        margin-bottom: 23px;
+        position: relative;
+        width: 48%;
+    }
+}

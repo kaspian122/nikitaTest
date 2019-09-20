@@ -1,5 +1,3 @@
-import MainUtils from "../utils/mainUtils";
-
 /**
  *
  * @type {{
@@ -9,11 +7,11 @@ import MainUtils from "../utils/mainUtils";
  * }}
  */
 
-const headerMenu = MainUtils.KeyMirror([
-    'MAIN',
-    'NEWS',
-    'ABOUT',
-]);
+const headerMenu = {
+    MAIN: 'MAIN',
+    NEWS: 'NEWS',
+    ABOUT: 'ABOUT'
+};
 
 const titles = {
     [headerMenu.MAIN]: 'Home',
@@ -36,9 +34,23 @@ const menu = [
     }
 ];
 
+const actions = {
+    LOGIN: 'LOGIN',
+    ERROR_LOGIN: 'ERROR_LOGIN',
+    SIGN_OUT: 'SIGN_OUT',
+    ADD_DATA: 'ADD_DATA',
+};
+
+const url = {
+    users: 'http://localhost:8000/users/',
+    data: 'http://localhost:8000/data/'
+};
+
 const MainConstants = {
     menu,
-    titles
+    titles,
+    actions,
+    url,
 };
 
 export default MainConstants;

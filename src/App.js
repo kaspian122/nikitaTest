@@ -1,36 +1,24 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
-import Home from "./pages/HomePage/HomePage";
-import Login from "./pages/Login/Login";
-import News from "./pages/News/News";
-import Profile from "./pages/Profile/Profile";
-import Admin from "./pages/AdminPage/Admin";
-import PrivateRouter from "./components/PrivateRoute/PrivateRouter";
-import NotFound from "./pages/404 Not Found/404 Not Found";
-import About from "./pages/AboutPage/AboutPage";
+import { Route, Switch } from 'react-router-dom';
+import HomePage from './pages/homePage';
+import Login from './pages/login';
+import News from './pages/news';
+import Profile from './pages/profile';
+import Admin from './pages/adminPage/admin';
+import PrivateRouter from './components/privateRoute';
+import NotFound from './pages/404NotFound';
+import About from './pages/aboutPage/aboutPage';
 
 function App() {
     return (
         <div>
             <Switch>
-                <PrivateRouter path="/" exact renderHead>
-                    <Home/>
-                </PrivateRouter>
-                <Route path="/login" renderHead>
-                    <Login/>
-                </Route>
-                <PrivateRouter path="/news" renderHead>
-                    <News/>
-                </PrivateRouter>
-                <PrivateRouter path="/profile" renderHead>
-                    <Profile/>
-                </PrivateRouter>
-                <PrivateRouter path="/about" renderHead={false}>
-                    <About/>
-                </PrivateRouter>
-                <PrivateRouter path="/admin" renderHead>
-                    <Admin/>
-                </PrivateRouter>
+                <PrivateRouter path="/" exact renderHead component={HomePage}/>
+                <Route path="/login" renderHead component={Login}/>
+                <PrivateRouter path="/news" renderHead component={News}/>
+                <PrivateRouter path="/profile" renderHead component={Profile}/>
+                <PrivateRouter path="/about" renderHead={false} component={About}/>
+                <PrivateRouter path="/admin" renderHead component={Admin}/>
                 <Route path="*" component={NotFound}/>
             </Switch>
         </div>

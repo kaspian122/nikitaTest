@@ -16,36 +16,41 @@ const Header = props => {
     const headerLinks = () => {
         if(props.authenticate) {
             return [
-                <li className="auth">
-                    <Link to="/profile">Профиль {username}</Link>
-                </li>,
-                <li className="auth">
-                    <Link to="/" onClick={handleOut}>Выйти</Link>
-                </li>
+                <div className="header__container__nav--item">
+                    <ul className="header__container__nav--item-list">
+                        <li>
+                            <Link to="/profile">{username}</Link>
+                        </li>
+                        <li>
+                            <Link to="/" onClick={handleOut}>Logout</Link>
+                        </li>
+                    </ul>
+                </div>
             ]
         }
         return [
-            <li className="auth">
-                <Link to="/login">Авторизация</Link>
-            </li>
+            <div className="header__container__nav--item">
+                <Link to="/login">Login</Link>
+            </div>
         ]
     };
 
     return(
-        <header>
-                <div>
-                    <nav>
-                        <ul>
-                            {MainConstants.menu.map((item, index) =>
-                                <li key={MainUtils.generateKey(`header_item_${index}`)}>
-                                    <Link to={item.link}>{MainConstants.titles[item.id]}</Link>
-                                </li>
-                            )}
-                            {headerLinks()}
-                        </ul>
-                    </nav>
+        <div className="header">
+            <div className="header__container">
+                <div className="header__container--logo">
+                    JS
                 </div>
-        </header>
+                <div className="header__container__nav">
+                    {MainConstants.menu.map((item, index) =>
+                        <div className="header__container__nav--item" key={MainUtils.generateKey(`header_item_${index}`)}>
+                            <Link to={item.link}>{MainConstants.titles[item.id]}</Link>
+                       </div>
+                    )}
+                    {headerLinks()}
+                </div>
+            </div>
+        </div>
     )
 };
 

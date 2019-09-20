@@ -16,7 +16,7 @@ const FirstForm = props => {
     }, []);
 
     return(
-        <div className={`formRequest__container ${animationClass}`}>
+        <div className={`formRequest-container ${animationClass}`}>
             <form onSubmit={handleSubmit} className="formRequest">
                 <div className="formRequest__title">
                     <Field

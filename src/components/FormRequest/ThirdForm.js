@@ -30,10 +30,12 @@ const ThirdForm = props => {
                     <label className="formLabel">Фамилия</label>
                     <Field name="surname" type="text" component={renderField}/>
                 </div>
-                <button className={`formRequest__button`} disabled={ pristine || submitting } type="submit">
-                    Отправить
-                </button>
-                <button className={`formRequest__button`} type="button" onClick={prevPage}>Назад</button>
+                <div className="formRequest__group-button">
+                    <button className={`formRequest__button`} type="button" onClick={prevPage}>Назад</button>
+                    <button className={`formRequest__button`} disabled={ pristine || submitting } type="submit">
+                        Отправить
+                    </button>
+                </div>
             </form>
         </div>
     );

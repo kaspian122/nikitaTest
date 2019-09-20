@@ -1,13 +1,30 @@
-.posts{
-  padding: 0 100px 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
+.news {
+    padding: 0 100px 30px;
+
+    &__title {
+        text-align: center;
+        font-size: 42px;
+        animation: wroom-title .5s ease-in;
+    }
+
+    &__posts {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        &__to-request {
+            width: 32%;
+        }
+    }
 }
 
-.to-request{
-    width: 40%;
+@keyframes wroom-title {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
 }
+
+
 
 
 

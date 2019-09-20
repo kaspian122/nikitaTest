@@ -1,85 +1,97 @@
 .formPanel{
-  display: flex;
-  height: 320px;
-  width: 640px;
-  position: absolute;
-  top: 25%;
-  left: 25%;
+    display: flex;
+    height: 320px;
+    width: 640px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+    &__left {
+        background: white;
+        height: calc(100% - 40px);
+        top: 20px;
+        position: relative;
+        width: 50%;
+        box-shadow: 1px 1px 5px #222222;
+        perspective: 1px;
+        animation: wroom-left-panel 2s;
+
+        &__title {
+            font-size: 50px;
+            font-weight: 900;
+            margin: 50px 40px 40px;
+        }
+
+        &__text {
+            color: #999999;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 40px;
+        }
+    }
+
+    &__right {
+        background: #474A59;
+        box-shadow: 0 0 40px 16px rgba(0,0,0,0.22);
+        color: #F1F1F2;
+        position: relative;
+        width: 50%;
+
+        &__form {
+            margin: 40px;
+            position: absolute;
+        }
+
+        &__button {
+            background: transparent;
+            border: 3px solid white;
+            border-radius: 15px;
+            color: #F2F2F2;
+            font-size: 20px;
+            line-height: 30px;
+            outline: none !important;
+            width: 100%;
+            margin-top: 40px;
+
+            &:hover {
+                background: white;
+                color: #474A59;
+            }
+        }
+
+        label {
+            color: #C2C2C5;
+            display: block;
+            font-size: 14px;
+            height: 16px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        &__input {
+            background: transparent;
+            border: 3px solid white;
+            border-radius: 10px;
+            color: #F2F2F2;
+            font-size: 20px;
+            height: 30px;
+            line-height: 30px;
+            outline: none !important;
+            width: 100%;
+        }
+
+        &__modal {
+            float: right;
+            margin: 30px 30px 0 0;
+        }
+    }
 }
 
-.formPanel__left{
-  background: white;
-  height: calc(100% - 40px);
-  top: 20px;
-  position: relative;
-  width: 50%;
-}
-
-.formPanel__left__title{
-  font-size: 50px;
-  font-weight: 900;
-  margin: 50px 40px 40px;
-}
-
-.formPanel__left__text{
-  color: #999999;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 40px;
-}
-
-.formPanel__right{
-  background: #474A59;
-  box-shadow: 0 0 40px 16px rgba(0,0,0,0.22);
-  color: #F1F1F2;
-  position: relative;
-  width: 50%;
-}
-
-.formPanel__right__form{
-  margin: 40px;
-  position: absolute;
-}
-
-.formPanel__right__button{
-  background: transparent;
-  border: 3px solid white;
-  border-radius: 15px;
-  color: #F2F2F2;
-  font-size: 20px;
-  line-height: 30px;
-  outline: none !important;
-  width: 100%;
-  margin-top: 40px;
-
-  &:hover {
-    background: white;
-    color: #474A59;
-  }
-}
-
-label{
-  color: #C2C2C5;
-  display: block;
-  font-size: 14px;
-  height: 16px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
-.formPanel__right__input {
-  background: transparent;
-  border: 3px solid white;
-  border-radius: 10px;
-  color: #F2F2F2;
-  font-size: 20px;
-  height: 30px;
-  line-height: 30px;
-  outline: none !important;
-  width: 100%;
-}
-
-.formPanel__right__modal {
-  float: right;
-  margin: 30px 30px 0 0;
+@keyframes wroom-left-panel {
+    0% {
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    100%{
+        transform: rotate3d(0, 0, 0, 90deg);
+    }
 }

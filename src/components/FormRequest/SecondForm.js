@@ -34,8 +34,10 @@ const SecondForm = props => {
                         </label>
                     </div>
                 </div>
-                <button className={`formRequest__button`} type="submit"> Дальше </button>
-                <button className={`formRequest__button`} type="button" onClick={prevPage}>Назад</button>
+                <div className="formRequest__group-button">
+                    <button className={`formRequest__button`} type="button" onClick={prevPage}>Назад</button>
+                    <button className={`formRequest__button`} type="submit"> Дальше </button>
+                </div>
             </form>
         </div>
     );

@@ -31,34 +31,37 @@ const Form = props => {
     console.log(props.errorMessage);
 
     return (
-        <div className="formPanel">
-            <div className="formPanel__left">
-                <div className="formPanel__left__title">{login}</div>
-                <div className="formPanel__left__text">Добро пожаловать</div>
-            </div>
-            <div className="formPanel__right">
-            <span className="formPanel__right__modal">
-                <main>
-                    {isOpen &&
-                        <Modal onClose={toggleModal}>
-                            <h1>Справка</h1>
-                        </Modal>
-                    }
-                </main>
-                <span onClick={toggleModal}>
-                    <FaQuestionCircle/>
+        <>
+            <div className="left-side"/>
+            <div className="formPanel">
+                <div className="formPanel__left">
+                    <div className="formPanel__left__title">{login}</div>
+                    <div className="formPanel__left__text">Добро пожаловать</div>
+                </div>
+                <div className="formPanel__right">
+                <span className="formPanel__right__modal">
+                    <main>
+                        {isOpen &&
+                            <Modal onClose={toggleModal}>
+                                <h1>Справка</h1>
+                            </Modal>
+                        }
+                    </main>
+                    <span onClick={toggleModal}>
+                        <FaQuestionCircle/>
+                    </span>
                 </span>
-            </span>
-                <form onSubmit={handleSubmit(submit)} className="formPanel__right__form">
-                    <div>
-                        <label htmlFor="login">Логин</label>
-                        <Field className="formPanel__right__input" name="login" component="input" type="text"/>
-                        {errorMessage()}
-                    </div>
-                    <button className="formPanel__right__button" value="Войти" type="submit">Войти</button>
-                </form>
+                    <form onSubmit={handleSubmit(submit)} className="formPanel__right__form">
+                        <div>
+                            <label htmlFor="login">Логин</label>
+                            <Field className="formPanel__right__input" name="login" component="input" type="text"/>
+                            {errorMessage()}
+                        </div>
+                        <button className="formPanel__right__button" value="Войти" type="submit">Войти</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 };
 

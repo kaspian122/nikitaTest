@@ -51,7 +51,6 @@ const Post = props => {
         const direction = closettEdge(event, currentItem);
         const directionString = translateDirection(direction);
         setStyle('enter--' + directionString);
-        console.log('enter', directionString)
     };
 
     const onMouseLeave = event => {
@@ -59,17 +58,17 @@ const Post = props => {
         const direction = closettEdge(event, currentItem);
         const directionString = translateDirection(direction);
         setStyle('leave--' + directionString);
-        console.log('leave', directionString)
     };
 
     return(
         <>
             <div className="postCard" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                     <img className="postCard__img" alt="" src={post.url}/>
-                    <div className="postCard__title">
-                        <h4>{post.title}</h4>
+                    <div className={`slider slider--${style}`}>
+                        <div className="postCard__title">
+                            <h4>{post.title}</h4>
+                        </div>
                     </div>
-                    <div className={`slider slider--${style}`}/>
 
             </div>
         </>

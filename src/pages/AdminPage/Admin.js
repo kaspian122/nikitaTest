@@ -18,18 +18,23 @@ const Admin = () => {
     }, []);
 
     return(
-        <>
+        <div className="admin">
             {loading ? (<Spinner/>)
             :(
-                <div className="admin__container">
-                    {Object.values(posts).map((post, index) => (
-                        <div key={MainUtils.generateKey(`_users_post_${index}`)}>
-                            <UsersRequest post={post}/>
-                        </div>
-                    ))}
-                </div>
+                <>
+                    <div className="admin__title">
+                        <h1>Заявки пользователей</h1>
+                    </div>
+                    <div className="admin__content">
+                        {Object.values(posts).map((post, index) => (
+                            <div key={MainUtils.generateKey(`_users_post_${index}`)}>
+                                <UsersRequest post={post}/>
+                            </div>
+                        ))}
+                    </div>
+                </>
                 )}
-        </>
+        </div>
     )
 };
 

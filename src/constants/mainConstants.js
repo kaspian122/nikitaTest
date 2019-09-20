@@ -5,17 +5,20 @@ import MainUtils from "../utils/mainUtils";
  * @type {{
     'MAIN',
     'NEWS',
+    'ABOUT',
  * }}
  */
 
 const headerMenu = MainUtils.KeyMirror([
     'MAIN',
     'NEWS',
+    'ABOUT',
 ]);
 
 const titles = {
-    [headerMenu.MAIN]: 'Главная',
-    [headerMenu.NEWS]: 'Новости'
+    [headerMenu.MAIN]: 'Home',
+    [headerMenu.NEWS]: 'News',
+    [headerMenu.ABOUT]: 'About'
 };
 
 const menu = [
@@ -27,6 +30,10 @@ const menu = [
         id: headerMenu.NEWS,
         link: '/news'
     },
+    {
+        id: headerMenu.ABOUT,
+        link: '/about'
+    }
 ];
 
 const MainConstants = {

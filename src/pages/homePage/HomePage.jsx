@@ -1,4 +1,4 @@
-import './homePage.scss';
+import './style.scss';
 import React from 'react';
 import Typed from 'react-typed';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import FirstForm from '../formRequest/firstForm';
-import SecondForm from '../formRequest/secondForm';
-import ThirdForm from '../formRequest/thirdForm';
+import FirstForm from '../formRequest/FirstForm';
+import SecondForm from '../formRequest/SecondForm';
+import ThirdForm from '../formRequest/ThirdForm';
 
 const Request = props => {
     const [page, pageSet] = useState(1);

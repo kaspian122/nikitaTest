@@ -1,4 +1,4 @@
-import './news.scss';
+import './style.scss';
 import React, { useEffect, useState } from 'react';
 import Post from '../../components/post';
 import Spinner from '../../components/spinner';

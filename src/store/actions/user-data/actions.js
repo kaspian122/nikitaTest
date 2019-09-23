@@ -2,7 +2,7 @@ import axios from 'axios';
 import qs from 'qs';
 import Api from '../../../utils/api';
 import dispatch from '../../../index';
-import MainConstants from "../../../constants/mainConstants";
+import MainConstants from "../../../constants/MainConstants";
 
 const config = {
     headers: {

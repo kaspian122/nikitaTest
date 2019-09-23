@@ -1,4 +1,4 @@
-import './usersRequest.scss';
+import './style.scss';
 import React from 'react';
 
 const UsersRequest = props => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {connect} from "react-redux";
-import renderField from "../errorLabel/errorLabel";
+import renderField from "../errorLabel/ErrorLabel";
 import validate from "../../validate/validate";
 import actionsData from '../../store/actions/user-data/actions'
 

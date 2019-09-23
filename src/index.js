@@ -7,7 +7,7 @@ import reduxThunk from 'redux-thunk';
 import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import session from './store/root';
-import MainConstants from "./constants/mainConstants";
+import MainConstants from "./constants/MainConstants";
 
 
 const user = localStorage.getItem('user');

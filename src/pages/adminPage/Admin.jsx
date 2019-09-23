@@ -1,7 +1,7 @@
-import './admin.scss';
+import './style.scss';
 import React, { useState, useEffect } from 'react';
 import UsersRequest from '../../components/usersRequest';
-import Spinner from '../../components/spinner/spinner';
+import Spinner from '../../components/spinner/Spinner';
 import Api from '../../utils/api';
 import MainUtils from '../../utils/mainUtils';
 

@@ -1,4 +1,4 @@
-import './formAuth.scss';
+import './style.scss';
 import React, { useState } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { FaQuestionCircle } from 'react-icons/fa';

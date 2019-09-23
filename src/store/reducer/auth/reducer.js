@@ -1,4 +1,4 @@
-import MainConstants from "../../../constants/mainConstants";
+import MainConstants from "../../../constants/MainConstants";
 
 export default  (state = {authenticate: false}, action) => {
     switch (action.type) {

@@ -1,1 +1,1 @@
-export { default } from './usersRequest';
+export { default } from './UsersRequest';

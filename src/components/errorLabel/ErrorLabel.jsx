@@ -1,4 +1,4 @@
-import './errorLabel.scss';
+import './style.scss';
 import React from 'react';
 
 const renderField = props => {

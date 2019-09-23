@@ -4,10 +4,10 @@ import HomePage from './pages/homePage';
 import Login from './pages/login';
 import News from './pages/news';
 import Profile from './pages/profile';
-import Admin from './pages/adminPage/admin';
+import Admin from './pages/adminPage/Admin';
 import PrivateRouter from './components/privateRoute';
 import NotFound from './pages/404NotFound';
-import About from './pages/aboutPage/aboutPage';
+import About from './pages/aboutPage/AboutPage';
 
 function App() {
     return (

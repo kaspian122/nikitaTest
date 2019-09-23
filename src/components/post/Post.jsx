@@ -1,4 +1,4 @@
-import './post.scss';
+import './Post.scss';
 import React, {useState} from 'react';
 
 const Post = props => {

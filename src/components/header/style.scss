@@ -25,6 +25,7 @@
         color: $dark-blue;
         transition: .3s ease-in-out;
         text-decoration: none;
+        margin-right: 30px;
 
         &:hover {
             color: $white-gray;
@@ -37,16 +38,20 @@
     }
 
     &__nav {
-        display: flex;
-        flex-direction: row;
 
         &__item {
+            display: flex;
+            flex-direction: row;
             margin-right: 50px;
         }
 
-        &__item:last-child {
+        &:last-child {
             margin-right: 0;
         }
+
+        //&__item:last-child {
+        //    margin-right: 0;
+        //}
 
         &__item-list {
             list-style: none;

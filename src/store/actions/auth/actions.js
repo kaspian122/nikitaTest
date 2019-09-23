@@ -1,6 +1,6 @@
 import axios from 'axios';
 import dispatch from "../../../index";
-import MainConstants from "../../../constants/mainConstants";
+import MainConstants from "../../../constants/MainConstants";
 
 const signIn = (username) => {
     axios.get(MainConstants.url.users + `${username.login}`)

@@ -1,0 +1,99 @@
+@import "../../constants/color";
+
+.form-auth {
+    display: flex;
+    height: 320px;
+    width: 640px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+    &__label {
+        color: $white-gray;
+        display: block;
+        font-size: 14px;
+        height: 16px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        background: transparent;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        color: $dark-white;
+        font-size: 20px;
+        height: 30px;
+        line-height: 30px;
+        outline: none !important;
+        width: 100%;
+    }
+
+    &__button {
+        background: transparent;
+        border: 3px solid #fff;
+        border-radius: 15px;
+        color: $dark-white;
+        font-size: 20px;
+        line-height: 30px;
+        outline: none !important;
+        width: 100%;
+        margin-top: 40px;
+
+        &:hover {
+            background: #fff;
+            color: $dark-gray;
+        }
+    }
+
+    &__title {
+        font-size: 50px;
+        font-weight: 900;
+        margin: 50px 40px 40px;
+    }
+
+    &__text {
+        color: $gray;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 40px;
+    }
+
+    &__left {
+        background: white;
+        height: calc(100% - 40px);
+        top: 20px;
+        position: relative;
+        width: 50%;
+        box-shadow: 1px 1px 5px $black;
+        perspective: 1px;
+        animation: wroom-left-panel 2s;
+    }
+
+    &__right {
+        background: $dark-gray;
+        box-shadow: 0 0 40px 16px rgba(0,0,0,0.22);
+        color: $dark-white;
+        position: relative;
+        width: 50%;
+
+        &__form {
+            margin: 40px;
+            position: absolute;
+        }
+
+        &__modal {
+            float: right;
+            margin: 30px 30px 0 0;
+        }
+    }
+}
+
+@keyframes wroom-left-panel {
+    0% {
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    100%{
+        transform: rotate3d(0, 0, 0, 90deg);
+    }
+}

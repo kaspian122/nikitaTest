@@ -1,0 +1,68 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    &__title {
+
+        &__glitch {
+            color:#222222;
+            font-weight: 600;
+            font-size:100px;
+            text-align: center;
+            position: relative;
+            padding:30px;
+            margin: 0 auto;
+
+            &:before, &:after {
+                content:'Мое тестовое задание';
+                color:#222222;
+                position: absolute;
+                top:0;
+                left: 0;
+                right: 0;
+                overflow:hidden;
+                padding:30px;
+            }
+            &:before {
+                left:3px;
+                text-shadow: -3px 0 red;
+                animation: glitch-before 2s linear 0s infinite alternate;
+            }
+            &:after {
+                left:-3px;
+                text-shadow: -3px 0 blue;
+                animation: glitch-after 2s linear 0s infinite alternate;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__title {
+            font-size: 50px;
+        }
+    }
+}
+
+@keyframes glitch-before {
+    $steps: 20;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(150)+px, 9999px, random(150)+px, 40px)
+        }
+    }
+}
+
+@keyframes glitch-after {
+    $steps: 20;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(150)+px, 9999px, random(150)+px, 40px)
+        }
+    }
+}
